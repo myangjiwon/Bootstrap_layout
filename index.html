@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>부트스트랩_레이아웃</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet"> 
+</head>
+<style>
+
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>2.부트스트랩 - 레이아웃 </h1>
+        <p class="indent">
+            2.1 중단점 (breakpoints)
+        </p>
+        <p class="indent">
+            ■ 정의
+        </p>
+        <p class="indent2"> 
+    웹사이트 또는 웹 애플리케이션의 레이아웃을 반응형으로 만들기 위한 디자인 요소입니다.<br>
+    미디어 쿼리를 사용하여 설정되며, 특정 디바이스 크기에 따라 레이아웃이 변경될 수 있도록 합니다.<br>
+    <p class="indent">
+        ■ 6개의 브레이크포인트
+    </p>
+<p class="indent2">
+    xs (Extra small)<br>
+    <576px<br>
+    가장 작은 화면 크기를 위한 브레이크포인트로, 모바일 기기 등의 매우 작은 화면 크기를 대상으로 합니다.<br>
+    <br>
+    sm (Small)<br>
+    ≥576px<br>
+    작은 화면 크기를 대응하기 위한 브레이크포인트로, 태블릿과 같은 중간 정도의 화면 크기를 포함합니다.<br>
+    <br>
+    md (Medium)<br>
+    ≥768px<br>
+    설명: 중간 크기의 데스크탑 화면을 대응하기 위한 브레이크포인트입니다.<br>
+    <br>
+    lg (Large)<br>
+    ≥992px<br>
+    큰 데스크탑 화면을 위한 브레이크포인트로, 일반적인 데스크탑 화면 크기를 대상으로 합니다.<br>
+    <br>
+    xl (Extra large)<br>
+    ≥1200px<br>
+    매우 큰 데스크탑 화면을 위한 브레이크포인트로, 대형 모니터 등을 대상으로 합니다.<br>
+    <br>
+    xxl (Extra extra large)<br>
+    ≥1400px<br>
+    매우 큰 화면을 위한 브레이크포인트로, 매우 큰 모니터나 고해상도 화면 등을 대응합니다.<br>
+    
+        </p>
+
+
+        <p class="indent">
+            ■ 미디어 쿼리
+        </p>
+
+
+                <p class="indent3">● SCSS</p>
+                <div class="card">
+                    <div class="card-body">
+                      
+                        // Source mixins<br><br><br>
+
+                        // No media query necessary for xs breakpoint as it's effectively `@media (min-width: 0) { ... }`<br>
+                        @include media-breakpoint-up(sm) { ... }<br>
+                        @include media-breakpoint-up(md) { ... }<br>
+                        @include media-breakpoint-up(lg) { ... }<br>
+                        @include media-breakpoint-up(xl) { ... }<br>
+                        @include media-breakpoint-up(xxl) { ... }<br>
+                        <br>
+                        // Usage<br>
+                        <br>
+                        // Example: Hide starting at `min-width: 0`, and then show at the `sm` breakpoint<br>
+                        .custom-class {<br>
+                          display: none;<br>
+                        }<br>
+                        @include media-breakpoint-up(sm) {<br>
+                          .custom-class {<br>
+                            display: block;<br>
+                          }<br>
+                        }
+                    </div>
+                    <br>
+                    </div><br>
+                    <p class="indent3">● CSS</p>
+                    <div class="card">
+                    <div class="card-body">
+                        
+                        // X-Small devices (portrait phones, less than 576px)<br>
+                        // No media query for `xs` since this is the default in Bootstrap<br>
+                        <br>
+                        // Small devices (landscape phones, 576px and up)<br>
+                        @media (min-width: 576px) { ... }<br>
+                        <br>
+                        // Medium devices (tablets, 768px and up)<br>
+                        @media (min-width: 768px) { ... }<br>
+                        <br>
+                        // Large devices (desktops, 992px and up)<br>
+                        @media (min-width: 992px) { ... }<br>
+                        <br>
+                        // X-Large devices (large desktops, 1200px and up)<br>
+                        @media (min-width: 1200px) { ... }<br>
+                        <br>
+                        // XX-Large devices (larger desktops, 1400px and up)<br>
+                        @media (min-width: 1400px) { ... }<br>
+                    <br>
+                        
+                    
+                    </div>
+                   
+        <p class="indent3">
+            <a href="https://myangjiwon.github.io/Breakpoints/"> 미디어쿼리 </a>
+        </p>
+            
+        </div>
+
+
+
+
+<!----------------- 컨테이너 -------------------->
+
+
+<br>
+<br>
+    <div class="container">
+    <p class="indent">
+        2.2 컨테이너 (container)
+    </p>
+
+    <p class="indent">
+        ■ 정의
+    </p>
+    <p class="indent2"> 
+        컨텐츠를 담을 수 있는 너비입니다.<br>
+        그 안에 내용물을 정렬하고 일정한 간격을 유지하며 브라우저의 너비를 조정합니다.
+    </p>
+
+    <p class="indent">
+        ■ 유형
+    </p>
+    
+    각 반응형 중단점에 max-width를 설정하는 .container 입니다.<br><br>
+   
+        <div class="card">
+            <div class="card-body">
+                &lt;div class=&quot;container&quot;&gt;
+  &lt;!-- Content here --&gt;
+&lt;/div&gt;
+            </div>
+        </div>
+    <br>
+    정의된 중단점까지 width: 100%를 설정하는 .container-{breakpoint} 입니다.<br><br>
+        <div class="card">
+            <div class="card-body">
+                
+                &lt;div class=&quot;container-sm&quot;&gt;100% wide until small breakpoint&lt;/div&gt;<br>
+                &lt;div class=&quot;container-md&quot;&gt;100% wide until medium breakpoint&lt;/div&gt;<br>
+                &lt;div class=&quot;container-lg&quot;&gt;100% wide until large breakpoint&lt;/div&gt;<br>
+                &lt;div class=&quot;container-xl&quot;&gt;100% wide until extra large breakpoint&lt;/div&gt;<br>
+                &lt;div class=&quot;container-xxl&quot;&gt;100% wide until extra extra large breakpoint&lt;/div&gt;<br>
+              
+            </div>
+        </div><br>
+        전체 너비에 걸쳐 있는 컨테이너에 .container-fluid를 사용합니다.
+
+
+<br><br>
+        <div class="card">
+            <div class="card-body">
+        &lt;div class=&quot;container-fluid&quot;&gt;
+  ...
+&lt;/div&gt;
+
+            </div>
+        </div>
+    
+
+    <!-- <p class="indent">
+        ■ 예시
+    </p> -->
+
+
+
+<!----------------- 그리드 -------------------->
+
+
+<br>
+    <p class="indent">
+        2.3 그리드 (grid)
+    </p>
+
+    <p class="indent">
+        ■ 정의
+    </p>
+    <p class="indent2"> 
+        그리드는  화면 크기에 따라 다른 레이아웃을 쉽게 조절하고, 유연하게 반응형 웹 페이지를 디자인할 수 있도록 도와줍니다.<br>
+        12개의 열(column)과 행(row)으로 구성되어 있으며, 이를 조합해 콘텐츠를 배치하고 정렬할 수 있습니다.<br>
+
+    </p>
+    <p class="indent">
+        ■ 기본구조
+    </p>  
+    <p class="indent2"> 
+      <strong>col-*</strong>: <br>
+      기본적인 그리드 클래스로, 모든 화면 크기에 대해 해당 컬럼의 크기를 설정합니다. <br>
+    여기서 *에는 1부터 12까지의 숫자가 들어갑니다.<br> <br>
+    <strong>col-sm-*, col-md-*, col-lg-*</strong>:  <br>
+    특정 화면 크기에 대한 그리드 클래스로, 각각의 클래스는 작은 디바이스(스몰: sm), 중간 크기 디바이스(미디움: md), 큰 디바이스(라지: lg)에 적용됩니다. <br>
+    각각의 화면 크기에 맞게 컬럼의 크기를 설정할 수 있습니다.
+    </p>
+  
+   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsGR21%2FbtrlAtmOzYq%2F7GBDSjvF3czj3KEaxr9C30%2Fimg.png" alt=""></p>
+   <p class="indent2"> 
+    <strong>그리드 시스템 클래스</strong><br>
+    xs (스마트폰용): col- 화면의 너비가 576px 미만<br>
+    sm(태블릿용): col-sm- 화면의 너비가 576px 이상<br>
+    md (데스크탑용): col-md- 화면의 너비가 768px 이상<br>
+    lg (큰 데스크탑용): 화면의 너비가 992px 이상<br>
+    </p>
+  
+
+   
+<p class="indent">
+        ■ 예시
+    </p>
+
+
+    <div class="card">
+        <div class="card-body">
+
+          <a href="https://myangjiwon.github.io/grid/">그리드연습</a>
+      </div>
+        
+    </div>
+    
+
+    
+<!----------------- 열 -------------------->
+
+
+<br>
+<div class="container">
+<p class="indent">
+    2.4 열 (Columns)
+</p>
+
+<p class="indent">
+    ■ 작동 원리
+</p>
+<p class="indent2"> 
+    열은 그리드의 flexbox를 기반으로 합니다.
+    그리드 레이아웃을 만들 때 모든 콘텐츠는 열에 들어갑니다.
+
+</p>
+
+
+<p class="indent">
+    ■  align-items-* 를 사용한 수직 정렬 예시
+</p>
+
+ 
+<div class="card">
+        <div class="card-body">
+            <p class="indent2">
+              &lt;div class=&quot;container text-center&quot;&gt;<br>
+              &lt;div class=&quot;row align-items-start&quot;&gt;<br>
+                &lt;div class=&quot;col&quot;&gt;<br>
+                  One of three columns<br>
+                &lt;/div&gt;<br>
+                &lt;div class=&quot;col&quot;&gt;<br>
+                  One of three columns<br>
+                &lt;/div&gt;<br>
+                &lt;div class=&quot;col&quot;&gt;<br>
+                  One of three columns<br>
+                &lt;/div&gt;<br>
+              &lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            </div>
+</div><br>
+  <p class="indent">
+  ■ justify-content-* 를 사용한 수평 정렬 예시
+   </p>  
+
+   <div class="card">
+    <div class="card-body">
+        <p class="indent2">
+            &lt;div class="container text-center"&gt;<br>
+  &lt;div class="row justify-content-start"&gt;<br>
+    &lt;div class="col-4"&gt;<br>
+      One of two columns<br>
+    &lt;/div&gt;<br>
+    &lt;div class="col-4"&gt;<br>
+      One of two columns<br>
+    &lt;/div&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;div class="row justify-content-center"&gt;<br>
+    &lt;div class="col-4"&gt;<br>
+      One of two columns<br>
+    &lt;/div&gt;<br>
+    &lt;div class="col-4"&gt;<br>
+      One of two columns<br>
+    &lt;/div&gt;<br>
+  &lt;/div&gt;<br>
+&lt;/div&gt;<br>
+        </p></div>
+    </div><br>
+        
+</div>
+
+            
+        <p class="indent">
+            ■offset
+        </p>
+        <p class="indent2">
+        - 12 기준으로 나누어진 상황에서 왼쪽의 빈 공간을 차지하도록 만들 수 있는 방법입니다.<br>
+        - .col-*(디바이스크기)-offset-*(12기준)<br>
+        - col-sm-offset-4 -> 왼쪽에 4칸을 차지하도록 합니다.<br>
+</p>
+
+<!----------------- 거터 -------------------->
+
+
+<br>
+<div class="container">
+<p class="indent">
+    2.5 거터 (Gutters)
+    <p class="indent">
+        ■ 정의
+    </p>
+<p class="indent2">
+거터는 열 사이의 패딩으로, Bootstrap 그리드 시스템에서 콘텐츠의 간격을 맞추고 정렬하는 데에 사용됩니다.
+</p>
+<p class="indent">
+    ■ 작동원리
+</p>
+<p class="indent2"> 
+
+    거터의 너비는 1.5rem (24px)에서 시작합니다. <br>
+    거터는 반응형으로 조정될 수 있습니다. <br>
+    -0은 열(Column) 사이의 간격을 없애거나 최소화하며, g-5는 가장 큰 간격을 제공합니다.<br>
+    gx-*, gy-*: 가로(gx)와 세로(gy) 간격을 설정하는 클래스입니다.<br>
+    gx-*는 열(Column) 사이의 가로 간격을 조절하고, gy-*는 행(Row) 사이의 세로 간격을 조절합니다.<br>
+</p>
+<br>
+
+<p class="indent">
+    ■  수평 거터 .gx-* 클래스를 사용하여 수평 거터 너비를 제어할 수 있습니다. 
+</p>
+
+ 
+<div class="card">
+        <div class="card-body">
+            <p class="indent2">
+                &lt;div class="container px-4 text-center"&gt;<br>
+                &lt;div class="row gx-5"&gt;<br>
+                  &lt;div class="col"&gt;<br>
+                   &lt;div class="p-3"&gt;Custom column padding&lt;/div&gt;<br>
+                  &lt;/div&gt;<br>
+                  &lt;div class="col"&gt;<br>
+                    &lt;div class="p-3"&gt;Custom column padding&lt;/div&gt;<br>
+                  &lt;/div&gt;<br>
+                &lt;/div&gt;<br>
+              &lt;/div&gt;<br>
+            </p></div>    
+</div><br>
+  <p class="indent">
+    ■ 수직 거터 .gy-* 클래스는 열이 새 줄로 줄 바꿈될 때 행 내의 세로 거터 너비를 제어하는 ​​데에 사용할 수 있습니다.
+   </p>  
+
+   <div class="card">
+    <div class="card-body">
+        <p class="indent2">
+          &lt;div class=&quot;container overflow-hidden text-center&quot;&gt;<br>
+          &lt;div class=&quot;row gy-5&quot;&gt;<br>
+            &lt;div class=&quot;col-6&quot;&gt;<br>
+              &lt;div class=&quot;p-3&quot;&gt;Custom column padding&lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class=&quot;col-6&quot;&gt;<br>
+              &lt;div class=&quot;p-3&quot;&gt;Custom column padding&lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class=&quot;col-6&quot;&gt;<br>
+              &lt;div class=&quot;p-3&quot;&gt;Custom column padding&lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+            &lt;div class=&quot;col-6&quot;&gt;<br>
+              &lt;div class=&quot;p-3&quot;&gt;Custom column padding&lt;/div&gt;<br>
+            &lt;/div&gt;<br>
+          &lt;/div&gt;<br>
+        &lt;/div&gt;<br>
+        </p>
+    </div></div>
+        
+
+
+
+<!----------------- 유틸리티 -------------------->
+
+
+<br>
+<div class="container">
+<p class="indent">
+    2.6 레이아웃용 유틸리티 (Utilities for layout)
+</p>
+
+<p class="indent">
+    ■ 유틸리티 소개
+</p>
+<p class="indent2"> 
+    Bootstrap에서는 더 빠른 모바일 친화적 반응형 개발을 위해서 콘텐츠 표시, 숨기기, 정렬, 간격 조정을 위한 수십 개의 유틸리티 클래스가 포함되어 있습니다.
+</p>
+
+ 
+
+            <p class="indent2">
+                
+                * display 속성의 공통값을 반응형으로 전환하려면 디스플레이 유틸리티를 사용합니다. <br><br>
+                
+                * 대부분의 컴포넌트는 flexbox가 활성화된 상태로 만들어졌습니다.<br><br>
+                            
+                * margin 및 padding 간격 유틸리티를 사용하여 요소 및 컴포넌트의 간격과 크기를 제어합니다. <br><br>
+                
+                
+                * 가시성 유틸리티를 사용하여 요소의 visibility를 전환할 수 있습니다. <br>
+            </p>
+
+
+
+
+            
+<!----------------- z.index -------------------->
+
+
+<br>
+<div class="container">
+<p class="indent">
+    2.7 Z-index 
+    <p class="indent">
+        ■ 정의
+    </p>
+<p class="indent2">
+  z-index는 Bootstrap 그리드 시스템의 일부는 아니지만 컴포넌트가 서로 중첩되고 상호 작용하는 방식에서 중요한 역할을 담당합니다.
+</p>
+
+
+ 
+<div class="card">
+        <div class="card-body">
+            <p class="indent2">
+                &lt;div class="container px-4 text-center"&gt;
+                &lt;div class="row gx-5"&gt;
+                  &lt;div class="col"&gt;
+                   &lt;div class="p-3"&gt;Custom column padding&lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class="col"&gt;
+                    &lt;div class="p-3"&gt;Custom column padding&lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            </p></div>    
+</div><br>

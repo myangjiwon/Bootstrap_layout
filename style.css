@@ -1,0 +1,14 @@
+
+.indent {
+    text-indent: +1em;
+    font-size: 25px;
+  }
+  .indent2 {
+    padding-left: 45px;
+  } 
+  
+  .indent3 {
+    margin-top: 20px;
+    margin-left: 45px;
+  }
+  
